@@ -1,0 +1,34 @@
+:root[data-theme='light'] {
+  --bg-color: #F4F6F1;
+  --text-color: #3E432E;
+  --accent-color: #8A9A5B;
+  --button-color: #B5C185;
+}
+
+:root[data-theme='dark'] {
+  --bg-color: #2C2F24;
+  --text-color: #DDE2C6;
+  --accent-color: #A3B18A;
+  --button-color: #6C7A4D;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+}
+
+/* І твій #root, щоб теж підлаштовувався */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

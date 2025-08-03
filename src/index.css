@@ -1,0 +1,181 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Default (light theme) */
+  --primary-color: #4a5d23;
+  --secondary-color: #8b9556;
+  --accent-color: #d4af37;
+  --accent-hover: #b8941f;
+  --accent-light: rgba(212, 175, 55, 0.1);
+
+  --background-color: #f8f9f5;
+  --section-background: #ffffff;
+  --card-background: #ffffff;
+  --card-hover-background: #f5f7f0;
+  --card-pressed-background: #eff2e8;
+
+  --text-primary: #2d3e0f;
+  --text-secondary: #5a6b3d;
+  --text-light: #ffffff;
+
+  --border-color: #e0e5d6;
+}
+
+/* Світла тема */
+:root[data-theme="light"] {
+  --primary-color: #4a5d23;
+  --secondary-color: #8b9556;
+  --accent-color: #d4af37;
+  --accent-hover: #b8941f;
+  --accent-light: rgba(212, 175, 55, 0.1);
+
+  --background-color: #f8f9f5;
+  --section-background: #ffffff;
+  --card-background: #ffffff;
+  --card-hover-background: #f5f7f0;
+  --card-pressed-background: #eff2e8;
+
+  --text-primary: #2d3e0f;
+  --text-secondary: #5a6b3d;
+  --text-light: #ffffff;
+
+  --border-color: #e0e5d6;
+}
+
+/* Темна тема */
+:root[data-theme="dark"] {
+  --primary-color: #2d3e0f;
+  --secondary-color: #4a5d23;
+  --accent-color: #d4af37;
+  --accent-hover: #e6c04a;
+  --accent-light: rgba(212, 175, 55, 0.15);
+
+  --background-color: #2C2F24;
+  --section-background: #2C2F24;
+  --card-background: #2d3e0f;
+  --card-hover-background: #3a4d1a;
+  --card-pressed-background: #475c25;
+
+  --text-primary: #e8f0d8;
+  --text-secondary: #c5d4a8;
+  --text-light: #ffffff;
+
+  --border-color: #4a5d23;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--background-color);
+  transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus,
+input:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--accent-color);
+  color: var(--text-light);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Автоматичне світле оформлення для браузера, якщо не задана тема */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
