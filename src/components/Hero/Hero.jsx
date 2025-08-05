@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
         <div className={s.imageContainer}>
           <img 
-            src="../../../public/Baner1.jpg" 
+            src="/public/dragon1.jpeg" 
             alt="Військовослужбовці" 
             className={s.heroImage}
           />

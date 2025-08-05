@@ -59,7 +59,7 @@ const VacancyCard = ({ vacancy }) => {
             Подати заявку
           </button>
           <button className={s.uploadBtn} onClick={handleUploadResume}>
-            📎 Завантажити резюме
+             Завантажити резюме
           </button>
         </div>
       </div>
