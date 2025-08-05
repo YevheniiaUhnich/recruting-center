@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
         <div className={s.imageContainer}>
           <img 
-            src="/public/dragon1.jpeg" 
+            src="/dragon1.jpeg" 
             alt="Військовослужбовці" 
             className={s.heroImage}
           />

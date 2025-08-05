@@ -2,7 +2,7 @@ const vacanciesData = [
   {
     id: 1,
     title: "Офіцер зв'язку",
-    image: "/public/Baner2.jpg",
+    image: "/Baner2.jpg",
     description:
       "Забезпечення надійного зв'язку між підрозділами, управління сучасним обладнанням зв'язку.",
     requirements:
@@ -12,7 +12,7 @@ const vacanciesData = [
   {
     id: 2,
     title: "Механік-водій БТР",
-    image: "/public/Baner2.jpg",
+    image: "/Baner2.jpg",
     description:
       "Управління та технічне обслуговування бронетранспортерів, забезпечення боєготовності техніки.",
     requirements:
@@ -22,7 +22,7 @@ const vacanciesData = [
   {
     id: 3,
     title: "Сапер",
-    image: "/public/Baner2.jpg",
+    image: "/Baner2.jpg",
     description:
       "Розмінування територій, знешкодження вибухонебезпечних предметів, інженерні роботи.",
     requirements:
@@ -32,7 +32,7 @@ const vacanciesData = [
   {
     id: 4,
     title: "Медик",
-    image: "/public/Baner2.jpg",
+    image: "/Baner2.jpg",
     description:
       "Надання першої медичної допомоги, медичне забезпечення підрозділу.",
     requirements:
@@ -42,7 +42,7 @@ const vacanciesData = [
   {
     id: 5,
     title: "Кіберспеціаліст",
-    image: "/public/Baner2.jpg",
+    image: "/Baner2.jpg",
     description:
       "Захист інформаційних систем, кібербезпека, аналіз загроз у кіберпросторі.",
     requirements:
@@ -52,7 +52,7 @@ const vacanciesData = [
   {
     id: 6,
     title: "Розвідник",
-    image: "/public/Baner2.jpg",
+    image: "/Baner2.jpg",
     description:
       "Збір розвідувальної інформації, проведення спеціальних операцій.",
     requirements:
