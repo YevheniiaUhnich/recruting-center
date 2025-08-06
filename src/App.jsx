@@ -13,7 +13,7 @@ const ThemeToggle = () => {
 
   return (
     <a onClick={toggleTheme}>
-      {isDark ? '' : ''}
+      {isDark ? 'Світла тема' : 'Темна тема'}
     </a>
   );
 };

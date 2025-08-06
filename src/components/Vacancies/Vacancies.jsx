@@ -12,6 +12,8 @@ const Vacancies = () => {
         <p className={s.subtitle}>
           Обери свій шлях служіння Україні. Кожна позиція - це можливість захистити країну та розвинути професійні навички.
         </p>
+
+        <h3>Офіцерські посади</h3>
         
         <div className={s.grid}>
           {vacanciesData.map(vacancy => (

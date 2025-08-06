@@ -14,9 +14,11 @@ const Hero = () => {
     <section className={s.hero} id="home">
       <div className={s.container}>
         <div className={s.content}>
-          <h1 className={s.title}>
-            Служи Україні з честю та гідністю
-          </h1>
+          <h1 className={s.titleRecruting}>Онлайн-рекрутинговий центр<br></br>
+            107 реактивної артилерійської Кременчуцької бригади</h1>
+          <h2 className={s.title}>
+            Служи Україні з честю та гідністю!
+          </h2>
           <p className={s.subtitle}>
             Приєднуйся до лав Збройних Сил України. Захищай свою країну, 
             розвивай професійні навички та будуй успішну кар'єру в армії.
