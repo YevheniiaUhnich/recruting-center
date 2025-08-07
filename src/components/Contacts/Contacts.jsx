@@ -1,4 +1,11 @@
 import s from './Contacts.module.css';
+import { SlSocialFacebook } from 'react-icons/sl';
+import { AiOutlinePhone } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
+import { GrLocationPin } from "react-icons/gr";
+import { FaInstagram } from "react-icons/fa6";
+
+
 const Contacts = () => {
   return (
     <section className={s.contacts} id="contacts">
@@ -7,7 +14,7 @@ const Contacts = () => {
               <div className={s.contactsContent}>
                 <div className={s.contactInfo}>
                   <div className={s.contactItem}>
-                    <span className={s.contactIcon}>📞</span>
+              <AiOutlinePhone className={s.contactIcon}/>
                     <div>
                       <h3>Телефон для довідок</h3>
                       <p>+38 (000) 111-22-33</p>
@@ -16,7 +23,9 @@ const Contacts = () => {
                   </div>
                   
                   <div className={s.contactItem}>
-                    <span className={s.contactIcon}>📧</span>
+              
+              <AiOutlineMail className={s.contactIcon}/>
+              
                     <div>
                       <h3>Електронна пошта</h3>
                       <p>107reabrcvs@gmail.com</p>
@@ -24,7 +33,8 @@ const Contacts = () => {
                   </div>
                   
                   <div className={s.contactItem}>
-                    <span className={s.contactIcon}>📍</span>
+              
+              <GrLocationPin className={s.contactIcon}/>
                     <div>
                       <h3>Адреса</h3>
                       <p>Україна</p>
@@ -35,11 +45,11 @@ const Contacts = () => {
                 <div className={s.socialMedia}>
                   <h3>Слідкуйте за нами</h3>
                   <div className={s.socialLinks}>
-                    <a href="#" className={s.socialLink} aria-label="Facebook">
-                      <span>📘</span>
+                    <a href="https://www.facebook.com/107Kremenchuk?locale=uk_UA" className={s.socialLink} aria-label="Facebook" target="_blank">
+                      <SlSocialFacebook />
                     </a>
-                    <a href="#" className={s.socialLink} aria-label="Instagram">
-                      <span>📷</span>
+                    <a href="https://www.instagram.com/107reabr/?igsh=d2J4aDhnNWttNmE%3D#" className={s.socialLink} aria-label="Instagram">
+                    <FaInstagram />
                     </a>
                     <a href="#" className={s.socialLink} aria-label="Telegram">
                       <span>✈️</span>
