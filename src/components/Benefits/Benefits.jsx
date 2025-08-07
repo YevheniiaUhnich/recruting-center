@@ -27,6 +27,8 @@ const Benefits = () => {
               <div className={s.info}>
                   <h3 className={s.name}>{benefit.name}</h3>
                   <p className={s.position}>{benefit.position}</p>
+                  <p className={s.position}>{benefit.rank}</p>
+                  
                   <p className={s.experience}>{benefit.experience}</p>
                 </div>
 
