@@ -1,14 +1,14 @@
 import React from 'react';
 import s from './Benefits.module.css';
 import benefitsData from '../../data/benefitsData';
+import { MdStarBorder } from "react-icons/md";
   
 
 const Benefits = () => {
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (
-      <span key={index} className={`${s.star} ${index < rating ? s.filled : ''}`}>
-        ★
-      </span>
+      <MdStarBorder key={index} className={`${s.star} ${index < rating ? s.filled : ''}`}/>
+
     ));
   };
 
@@ -24,12 +24,14 @@ const Benefits = () => {
           {benefitsData.map(benefit => (
             <div key={benefit.id} className={s.card}>
               <div className={s.header}>
-                <img src={benefit.avatar} alt={benefit.name} className={s.avatar} />
-                <div className={s.info}>
+              <div className={s.info}>
                   <h3 className={s.name}>{benefit.name}</h3>
                   <p className={s.position}>{benefit.position}</p>
                   <p className={s.experience}>{benefit.experience}</p>
                 </div>
+                
+                <img src={benefit.avatar} alt={benefit.name} className={s.avatar} />
+                
               </div>
               
               <div className={s.rating}>
