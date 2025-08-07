@@ -212,15 +212,7 @@
   .logoPlaceholder span:first-child {
     font-size: 1.1rem;
   }
-  
-  .burgerMenu {
-    width: 22px;
-    height: 18px;
-  }
-  
-  .burgerMenu span {
-    height: 2px;
-  }
+
   
   .burgerMenu.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);

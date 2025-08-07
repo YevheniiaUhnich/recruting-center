@@ -1,6 +1,7 @@
 import s from './Header.module.css';
 import { useTheme } from '../DarkModeContext/DarkModeContext';
 import { useState, useEffect, useRef } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 
 
@@ -40,15 +41,13 @@ const Header = () => {
         
         {/* Бургер-меню для мобільних пристроїв */}
         <button 
-          className={`${s.burgerMenu} ${isMenuOpen ? s.active : ''}`} 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Меню"
-          aria-expanded={isMenuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+  className={s.burgerMenu}
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  aria-label="Меню"
+  aria-expanded={isMenuOpen}
+>
+  {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+</button>
         
         {/* Навігаційне меню */}
         <nav 
