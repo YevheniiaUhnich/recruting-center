@@ -33,8 +33,8 @@ const Header = () => {
       <div className={s.container}>
         <div className={s.logo}>
           <div className={s.logoPlaceholder}>
-            <span>🪖</span>
-            <span>ВІЙСЬКОВА ЧАСТИНА</span>
+          <img src="/107Logo.png" alt="Логотип" width="100" height="100" />
+            <span>107 РЕАБР</span>
           </div>
         </div>
         
