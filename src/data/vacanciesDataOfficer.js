@@ -2,7 +2,7 @@ const vacanciesDataOfficer = [
   {
     id: 1,
     title: "Командир взводу",
-    image: "/commander3.png",
+    image: "/commander.jpg",
     description:
       "Забезпечує технічно правильну експлуатацію озброєння та машин, організовує підготовку особового складу з технічної підготовки і водіння, контролює справність техніки та допускає до експлуатації лише технічно придатні машини.",
     requirements:
@@ -12,7 +12,7 @@ const vacanciesDataOfficer = [
   {
     id: 2,
     title: "Заступник командира роти з психологічної підтримки персоналу",
-    image: "/psyhologist1.png",
+    image: "/psyhologist1.jpg",
     description:
       "Управління та технічне обслуговування бронетранспортерів, забезпечення боєготовності техніки.",
     requirements:
@@ -22,7 +22,7 @@ const vacanciesDataOfficer = [
   {
     id: 3,
     title: "Заступник командира роти з озброєння",
-    image: "/armament1.png",
+    image: "/armament.jpg",
     description:
       "Розмінування територій, знешкодження вибухонебезпечних предметів, інженерні роботи.",
     requirements:
@@ -33,7 +33,7 @@ const vacanciesDataOfficer = [
   {
     id: 4,
     title: "Начальник медичного пункту",
-    image: "/medicine.png",
+    image: "/medicine.jpg",
     description:
       "Розмінування територій, знешкодження вибухонебезпечних предметів, інженерні роботи.",
     requirements:

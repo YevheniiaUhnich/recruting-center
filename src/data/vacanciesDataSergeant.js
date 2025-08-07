@@ -2,7 +2,7 @@ const vacanciesDataSergeant = [
   {
     id: 5,
     title: "Головний сержант",
-    image: "/Baner2.jpg",
+    image: "sergeant.jpg",
     description:
       "Розмінування територій, знешкодження вибухонебезпечних предметів, інженерні роботи.",
     requirements:
@@ -12,7 +12,7 @@ const vacanciesDataSergeant = [
   {
     id: 6,
     title: "Командир відділення",
-    image: "/Baner2.jpg",
+    image: "/commanderDep.jpg",
     description:
       "Розмінування територій, знешкодження вибухонебезпечних предметів, інженерні роботи.",
     requirements:
@@ -22,7 +22,7 @@ const vacanciesDataSergeant = [
   {
     id: 7,
     title: "Начальник обслуги",
-    image: "/Baner2.jpg",
+    image: "/service.jpg",
     description:
       "Розмінування територій, знешкодження вибухонебезпечних предметів, інженерні роботи.",
     requirements:
