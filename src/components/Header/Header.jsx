@@ -1,7 +1,8 @@
 import s from './Header.module.css';
 import { useTheme } from '../DarkModeContext/DarkModeContext';
 import { useState, useEffect, useRef } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBarsProgress } from "react-icons/fa6";
+import { FaTimesCircle } from "react-icons/fa";
 
 
 
@@ -46,7 +47,7 @@ const Header = () => {
   aria-label="Меню"
   aria-expanded={isMenuOpen}
 >
-  {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+  {isMenuOpen ? <FaTimesCircle size={24} /> : <FaBarsProgress  size={24} />}
 </button>
         
         {/* Навігаційне меню */}
