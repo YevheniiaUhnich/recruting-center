@@ -20,7 +20,6 @@
 .subtitle {
   font-size: 1.1rem;
   text-align: center;
-  margin-bottom: 50px;
   color: var(--text-secondary);
   max-width: 600px;
   margin-left: auto;
@@ -28,12 +27,31 @@
   line-height: 1.6;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  justify-items: center;
+.titleVacancy {
+  font-size: 2rem;
+  padding: 20px;
+  margin-top: 50px;
 }
+
+.scrollContainer {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+}
+
+.cardRow {
+  display: flex;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 20px;
+}
+
+.cardRow > * {
+  flex: 0 0 calc(100% / 3 - 20px); 
+  scroll-snap-align: start;
+  min-width: 300px; 
+}
+
 
 /* Tablet */
 @media (max-width: 1024px) {
