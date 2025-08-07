@@ -33,7 +33,7 @@ const Header = () => {
       <div className={s.container}>
         <div className={s.logo}>
           <div className={s.logoPlaceholder}>
-          <img src="/107Logo.png" alt="Логотип" width="100" height="100" />
+          <img src="/107Logo.png" alt="Логотип" width="60" height="60" />
             <span>107 РЕАБР</span>
           </div>
         </div>
