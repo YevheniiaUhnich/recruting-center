@@ -44,24 +44,30 @@
   gap: 20px;
   scroll-snap-type: x mandatory;
   scroll-padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .cardRow > * {
   flex: 0 0 calc(100% / 3 - 20px); 
   scroll-snap-align: start;
   min-width: 300px; 
+  margin-bottom: 20px;
 }
 
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-  }
-  
   .title {
     font-size: 2.2rem;
+  }
+  
+  .cardRow > * {
+    flex: 0 0 calc(50% - 20px);
+  }
+  
+  .scrollContainer {
+    overflow-x: visible;
   }
 }
 
@@ -71,9 +77,9 @@
     padding: 60px 0;
   }
   
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .cardRow > * {
+    flex: 0 0 100%;
+    max-width: 450px;
   }
   
   .title {
@@ -83,6 +89,11 @@
   .subtitle {
     font-size: 1rem;
     margin-bottom: 40px;
+  }
+  
+  .titleVacancy {
+    font-size: 1.7rem;
+    margin-top: 40px;
   }
 }
 
@@ -97,5 +108,19 @@
   
   .subtitle {
     font-size: 0.9rem;
+  }
+  
+  .titleVacancy {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    padding: 15px;
+  }
+  
+  .cardRow > * {
+    min-width: 250px;
+  }
+  
+  .scrollContainer {
+    padding-bottom: 5px;
   }
 }
