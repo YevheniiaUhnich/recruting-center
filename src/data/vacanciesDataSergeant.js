@@ -42,7 +42,7 @@ const vacanciesDataSergeant = [
   {
     id: 9,
     title: "Старший бойовий медик",
-    image: "/combatMed.jpg",
+    image: "/combatMad.jpg",
     description:
       "Керує медичним забезпеченням підрозділу, надає першу допомогу в бойових умовах та координує евакуацію поранених",
     requirements:
