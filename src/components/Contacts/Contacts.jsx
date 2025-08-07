@@ -19,7 +19,7 @@ const Contacts = () => {
                     <span className={s.contactIcon}>📧</span>
                     <div>
                       <h3>Електронна пошта</h3>
-                      <p>aaaaaaaaaa@gmail.com</p>
+                      <p>107reabrcvs@gmail.com</p>
                     </div>
                   </div>
                   
