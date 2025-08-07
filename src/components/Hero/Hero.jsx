@@ -9,6 +9,13 @@ const Hero = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const scrollToCondition = () => {
+    const elementTwo = document.getElementById('conditions');
+    if (elementTwo) {
+      elementTwo.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   return (
     <section className={s.hero} id="home">
@@ -27,7 +34,7 @@ const Hero = () => {
             <button onClick={scrollToVacancies} className={s.primaryBtn}>
               Переглянути вакансії
             </button>
-            <button className={s.secondaryBtn}>
+            <button onClick={scrollToCondition} className={s.secondaryBtn}>
               Дізнатися більше
             </button>
           </div>

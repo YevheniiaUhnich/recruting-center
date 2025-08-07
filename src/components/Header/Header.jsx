@@ -3,6 +3,7 @@ import { useTheme } from '../DarkModeContext/DarkModeContext';
 import { useState, useEffect, useRef } from 'react';
 
 
+
 const Header = () => {
   const { isDark, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);

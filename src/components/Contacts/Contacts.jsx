@@ -51,9 +51,7 @@ const Contacts = () => {
                     <a href="https://www.instagram.com/107reabr/?igsh=d2J4aDhnNWttNmE%3D#" className={s.socialLink} aria-label="Instagram">
                     <FaInstagram />
                     </a>
-                    <a href="#" className={s.socialLink} aria-label="Telegram">
-                      <span>✈️</span>
-                    </a>
+                   
                   </div>
                 </div>
               </div>
