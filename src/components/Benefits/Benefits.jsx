@@ -17,7 +17,7 @@ const Benefits = () => {
       <div className={s.container}>
         <h2 className={s.title}>Переваги військової служби</h2>
         <p className={s.subtitle}>
-          Відгуки наших військовослужбовців про переваги служби в Збройних Силах України
+          Відгуки наших військовослужбовців про переваги служби <br></br> в 107 реактивної артилерійської Кременчуцької бригади Збройних Сил України 
         </p>
         
         <div className={s.grid}>
@@ -29,7 +29,7 @@ const Benefits = () => {
                   <p className={s.position}>{benefit.position}</p>
                   <p className={s.experience}>{benefit.experience}</p>
                 </div>
-                
+
                 <img src={benefit.avatar} alt={benefit.name} className={s.avatar} />
                 
               </div>
