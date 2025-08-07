@@ -17,8 +17,8 @@ const Contacts = () => {
               <AiOutlinePhone className={s.contactIcon}/>
                     <div>
                       <h3>Телефон для довідок</h3>
-                      <p>+38 (000) 111-22-33</p>
-                      <p>+38 (050) 111-22-33</p>
+                      <p>+38 (096) 079-12-05</p>
+                      
                     </div>
                   </div>
                   
