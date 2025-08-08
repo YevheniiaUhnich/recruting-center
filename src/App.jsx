@@ -4,6 +4,7 @@ import Benefits from './components/Benefits/Benefits';
 import Vacancies from './components/Vacancies/Vacancies';
 import Condition from './components/Condition/Condition';
 import Contacts from './components/Contacts/Contacts';
+import Footer from './components/Footer/Footer';
 import s from "./App.module.css";
 import './App.css';
 import { useTheme } from './components/DarkModeContext/DarkModeContext';
@@ -28,6 +29,7 @@ function App() {
       <Condition />
       <Benefits />
       <Contacts />
+      <Footer />
     </div>
   );
 }
