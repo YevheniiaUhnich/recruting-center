@@ -115,11 +115,11 @@ const ModalVacancy = ({ isOpen, onClose, vacancy }) => {
                 <div className={s['radio-group']}>
                   <label className={s['radio-label']}>
                     <Field type="radio" name="militaryStatus" value="Перебуваю навійськовій службі" />
-                    Перебуває на військовій службі
+                    Перебуваю на військовій службі
                   </label>
                   <label className={s['radio-label']}>
                     <Field type="radio" name="militaryStatus" value="Не перебуваю на військовій службі" />
-                    Не перебуває на військовій службі
+                    Не перебуваю на військовій службі
                   </label>
                 </div>
                 <ErrorMessage name="militaryStatus" component="div" className={s.error} />

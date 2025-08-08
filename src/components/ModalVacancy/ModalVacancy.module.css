@@ -16,7 +16,7 @@
   border-radius: 15px;
   padding: 30px;
   width: 90%;
-  max-width: 500px;
+  width: 700px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
@@ -26,8 +26,8 @@
 
 .close-button {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 0;
+  right: 0;
   background: none;
   border: none;
   font-size: 24px;
@@ -52,7 +52,7 @@ h2 {
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   margin-top: 8px;
 }
 
@@ -65,9 +65,43 @@ h2 {
 }
 
 .radio-label input[type="radio"] {
-  width: auto;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  vertical-align: middle;
   margin: 0;
+  padding: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--primary-color); /* зелений контур */
+  border-radius: 50%; 
+  background-color: white;
   cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.radio-label input[type="radio"]:checked {
+  background-color: var(--primary-color); /* зелений фон при виборі */
+  border-color: var(--primary-color);
+}
+
+
+.radio-label input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: white; /* біла крапка всередині */
+  border-radius: 50%;
+}
+
+.radio-label input[type="radio"]:hover {
+  box-shadow: 0 0 0 3px rgba(74, 93, 35, 0.2); /* легке підсвічування */
 }
 
 label {
@@ -85,7 +119,7 @@ textarea {
   border: 1px solid var(--border-color);
   background: var(--input-background);
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 input:focus,
