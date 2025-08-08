@@ -46,7 +46,7 @@ const benefitsData = [
   {
     id: 5,
     name: "Мирослав",
-    rank: "МКапітан",
+    rank: "Капітан",
     position: "Командир підрозділу",
     avatar: "/dragon.jpg",
     review:
