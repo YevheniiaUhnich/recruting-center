@@ -10,6 +10,8 @@
   --text-color: #DDE2C6;
   --accent-color: #A3B18A;
   --button-color: #6C7A4D;
+
+
 }
 
 body {
@@ -31,4 +33,5 @@ a {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+
 }
