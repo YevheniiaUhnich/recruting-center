@@ -5,6 +5,7 @@ import Vacancies from './components/Vacancies/Vacancies';
 import Condition from './components/Condition/Condition';
 import Contacts from './components/Contacts/Contacts';
 import Footer from './components/Footer/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
 import s from "./App.module.css";
 import './App.css';
 import { useTheme } from './components/DarkModeContext/DarkModeContext';
@@ -30,6 +31,7 @@ function App() {
       <Benefits />
       <Contacts />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

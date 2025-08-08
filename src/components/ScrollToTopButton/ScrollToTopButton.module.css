@@ -1,0 +1,29 @@
+.scrollTo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent-color, #4a5d23);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 30px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+}
+
+.scrollTo:hover {
+  background: var(--accent-hover, #5d742b);
+}
+
+@media (min-width: 769px) {
+  /* Ховаємо кнопку на десктопі */
+  .scrollTo {
+    display: none;
+  }
+}
