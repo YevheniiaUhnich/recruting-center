@@ -66,6 +66,10 @@
   letter-spacing: 0.5px;
 }
 
+:root[data-theme='dark'] .sectionTitle {
+  color: var(--text-primary);
+}
+
 .description,
 .requirements {
   font-size: 0.9rem;
@@ -122,7 +126,6 @@
   transform: translateY(-1px);
 }
 
-/* Стилі для кнопки uploadBtn видалено */
 
 /* Mobile */
 @media (max-width: 768px) {
