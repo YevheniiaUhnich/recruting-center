@@ -9,6 +9,7 @@ import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton'
 import s from "./App.module.css";
 import './App.css';
 import { useTheme } from './components/DarkModeContext/DarkModeContext';
+import AboutUs from './components/AboutUs/AboutUs';
 
 const ThemeToggle = () => {
   const { isDark, toggleTheme } = useTheme();
@@ -26,6 +27,7 @@ function App() {
       <ThemeToggle />
       <Header />
       <Hero />
+      <AboutUs />
       <Vacancies />
       <Condition />
       <Benefits />

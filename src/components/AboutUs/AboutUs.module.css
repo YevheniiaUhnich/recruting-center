@@ -1,0 +1,70 @@
+/* новий контейнер секції */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 42px 16px 0; 
+}
+
+.topRule {
+  width: 460px;
+  height: 14px;
+  background: var(--text-secondary);
+  margin: 0 auto 24px;         
+  border-radius: 999px; 
+  margin-top: 40px;
+}
+
+.about {
+  padding: 48px 0;
+  display: flex;
+  flex-direction: row-reverse; 
+  align-items: center;
+  gap: 32px;
+}
+
+.blockText { 
+  flex: 1 1 auto; 
+}
+
+.imgAbout {
+  flex: 0 0 450px;
+  width: 450px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.text {
+  padding-top: 40px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--secondary-color); 
+}
+
+:root[data-theme='dark'] .text {
+  color: var(--text-primary);
+}
+
+:root[data-theme='dark'] .topRule {
+  background: var(--text-primary);
+}
+
+/* адаптив */
+@media (max-width: 1024px) {
+  .imgAbout { flex-basis: 300px; width: 300px; }
+}
+@media (max-width: 640px) {
+  .about { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .imgAbout { width: 100%; max-width: 420px; flex-basis: auto; }
+  .topRule { width: 96px; margin-bottom: 16px; }
+}
+
