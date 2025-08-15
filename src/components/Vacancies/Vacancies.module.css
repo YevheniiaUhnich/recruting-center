@@ -1,4 +1,4 @@
- .vacancies {
+.vacancies {
   padding: 80px 0;
   background: var(--background-color);
 }
@@ -33,10 +33,17 @@
   margin-top: 50px;
 }
 
+.spanStar {
+  vertical-align: middle; 
+  font-size: 1.2em;     
+  margin-right: 4px; 
+}
+
 .vacancies .scrollContainer {
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 10px;
+  padding-top: 40px;
 }
 
 .vacancies .cardRow {
@@ -131,3 +138,5 @@
     padding-bottom: 5px;
   }
 }
+
+

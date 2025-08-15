@@ -17,6 +17,7 @@ const Vacancies = () => {
         </p>
 
         <h3 className={s.titleVacancy}>Офіцерські посади</h3>
+        <p><span className='spanStar'>* </span>Претенденти на офіцерські посади, які не мають офіцерського звання, але мають вищу освіту, <br></br>можуть отримати офіцерське звання під час служби в частині, пройшовши відповідні кваліфікаційні курси</p>
         
         <div className={s.scrollContainer}>
   <div className={s.cardRow}>

@@ -14,7 +14,7 @@
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   background: var(--card-hover-background);
-}
+} 
 
 .card.pressed {
   transform: translateY(-2px) scale(0.98);
