@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div>
       <hr className={s.line} />
-      <p className={s.text}>© {currenYear} Yevheniia Uhnich ✦ Inspired Originals</p>
+      <p className={s.text}>© {currenYear} Онлайн-рекрутинговий центр 107 РЕАБР</p>
     </div>
   )
 }
