@@ -1,23 +1,31 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import { useEffect, useRef } from 'react';
-import s from './ModalVacancy.module.css';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { useEffect, useRef } from "react";
+import s from "./ModalVacancy.module.css";
 
-const ModalVacancy = ({ isOpen, onClose, vacancy }) => {
+const ModalVacancy = ({
+  isOpen,
+  onClose,
+  vacancy,
+  policyUrl = "https://docs.google.com/document/d/1DqOpY70uyyqHTVPDJLfvDOQiVWDd9AaxSLy1USLky94/edit?usp=sharing",
+}) => {
   const modalContentRef = useRef(null);
 
   useEffect(() => {
     const handleEscKey = (event) => {
-      if (event.key === 'Escape' && isOpen) {
+      if (event.key === "Escape" && isOpen) {
         onClose();
       }
     };
-    document.addEventListener('keydown', handleEscKey);
-    return () => document.removeEventListener('keydown', handleEscKey);
+    document.addEventListener("keydown", handleEscKey);
+    return () => document.removeEventListener("keydown", handleEscKey);
   }, [isOpen, onClose]);
 
   const handleOverlayClick = (event) => {
-    if (modalContentRef.current && !modalContentRef.current.contains(event.target)) {
+    if (
+      modalContentRef.current &&
+      !modalContentRef.current.contains(event.target)
+    ) {
       onClose();
     }
   };
@@ -30,15 +38,19 @@ const ModalVacancy = ({ isOpen, onClose, vacancy }) => {
       .max(65, "Вік повинен бути менше 65 років"),
     phone: Yup.string().required("Телефон обов'язковий"),
     position: Yup.string().required("Обрана посада обов'язкова"),
-    militaryStatus: Yup.string().required("Статус військової служби обов'язковий"),
+    militaryStatus: Yup.string().required(
+      "Статус військової служби обов'язковий"
+    ),
+    consent: Yup.bool().oneOf([true], "Потрібна згода"),
   });
 
   const initialValues = {
-    name: '',
-    age: '',
-    phone: '',
-    position: '',
-    militaryStatus: '',
+    name: "",
+    age: "",
+    phone: "",
+    position: "",
+    militaryStatus: "",
+    consent: false,
   };
 
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
@@ -49,28 +61,32 @@ const ModalVacancy = ({ isOpen, onClose, vacancy }) => {
       formData.append("phone", values.phone);
       formData.append("position", values.position);
       formData.append("militaryStatus", values.militaryStatus);
-      formData.append("vacancy", vacancy?.title || 'Не вказано');
+      formData.append("vacancy", vacancy?.title || "Не вказано");
+      formData.append("consent", values.consent ? "Так" : "Ні");
 
-      const response = await fetch('https://script.google.com/macros/s/AKfycbysB3_D0kGJW8r0OS60t_OuesgnBUWHeYoXMk-Pro1rdTQxoaEK-wlmsxG9OdBbelDkFA/exec', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData.toString(),
-      });
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbysB3_D0kGJW8r0OS60t_OuesgnBUWHeYoXMk-Pro1rdTQxoaEK-wlmsxG9OdBbelDkFA/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: formData.toString(),
+        }
+      );
 
       const result = await response.json();
 
-      if (result.result === 'success') {
-        alert('Заявка успішно відправлена!');
+      if (result.result === "success") {
+        alert("Заявка успішно відправлена!");
         resetForm();
         onClose();
       } else {
-        alert('Помилка при надсиланні: ' + result.error);
+        alert("Помилка при надсиланні: " + result.error);
       }
     } catch (error) {
-      console.error('Помилка при надсиланні:', error);
-      alert('Не вдалося відправити форму. Спробуйте пізніше.');
+      console.error("Помилка при надсиланні:", error);
+      alert("Не вдалося відправити форму. Спробуйте пізніше.");
     } finally {
       setSubmitting(false);
     }
@@ -79,54 +95,112 @@ const ModalVacancy = ({ isOpen, onClose, vacancy }) => {
   if (!isOpen) return null;
 
   return (
-    <div className={s['modal-overlay']} onClick={handleOverlayClick}>
-      <div className={s['modal-content']} ref={modalContentRef}>
-        <button className={s['close-button']} onClick={onClose}>×</button>
-        <h2>{vacancy ? `Подати заявку на вакансію: ${vacancy.title}` : 'Подати заявку'}</h2>
-        <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-          {({ isSubmitting }) => (
+    <div className={s["modal-overlay"]} onClick={handleOverlayClick}>
+      <div className={s["modal-content"]} ref={modalContentRef}>
+        <button className={s["close-button"]} onClick={onClose}>
+          ×
+        </button>
+        <h2>
+          {vacancy
+            ? `Подати заявку на вакансію: ${vacancy.title}`
+            : "Подати заявку"}
+        </h2>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          {({ isSubmitting, values }) => (
             <Form>
-              <div className={s['form-group']}>
+              <div className={s["form-group"]}>
                 <label htmlFor="name">Прізвище, Ім'я, По-батькові</label>
                 <Field type="text" id="name" name="name" />
                 <ErrorMessage name="name" component="div" className={s.error} />
               </div>
 
-              <div className={s['form-group']}>
+              <div className={s["form-group"]}>
                 <label htmlFor="age">Вік</label>
                 <Field type="number" id="age" name="age" />
                 <ErrorMessage name="age" component="div" className={s.error} />
               </div>
 
-              <div className={s['form-group']}>
+              <div className={s["form-group"]}>
                 <label htmlFor="phone">Телефон</label>
                 <Field type="tel" id="phone" name="phone" />
-                <ErrorMessage name="phone" component="div" className={s.error} />
+                <ErrorMessage
+                  name="phone"
+                  component="div"
+                  className={s.error}
+                />
               </div>
 
-              <div className={s['form-group']}>
+              <div className={s["form-group"]}>
                 <label htmlFor="position">Обрана посада</label>
                 <Field type="text" id="position" name="position" />
-                <ErrorMessage name="position" component="div" className={s.error} />
+                <ErrorMessage
+                  name="position"
+                  component="div"
+                  className={s.error}
+                />
               </div>
 
-              <div className={s['form-group']}>
+              <div className={s["form-group"]}>
                 <label>Статус військової служби</label>
-                <div className={s['radio-group']}>
-                  <label className={s['radio-label']}>
-                    <Field type="radio" name="militaryStatus" value="Перебуваю навійськовій службі" />
+                <div className={s["radio-group"]}>
+                  <label className={s["radio-label"]}>
+                    <Field
+                      type="radio"
+                      name="militaryStatus"
+                      value="Перебуваю на військовій службі"
+                    />
                     Перебуваю на військовій службі
                   </label>
-                  <label className={s['radio-label']}>
-                    <Field type="radio" name="militaryStatus" value="Не перебуваю на військовій службі" />
+                  <label className={s["radio-label"]}>
+                    <Field
+                      type="radio"
+                      name="militaryStatus"
+                      value="Не перебуваю на військовій службі"
+                    />
                     Не перебуваю на військовій службі
                   </label>
                 </div>
-                <ErrorMessage name="militaryStatus" component="div" className={s.error} />
+                <ErrorMessage
+                  name="militaryStatus"
+                  component="div"
+                  className={s.error}
+                />
+                <div className={s["form-group"]}>
+                  <div className={s["consent-block"]}>
+                    <Field
+                      type="checkbox"
+                      name="consent"
+                      id="consent"
+                      className={s["checkbox-input"]}
+                    />
+                    <label htmlFor="consent" className={s["consent-text"]}>
+                      Я погоджуюсь на обробку персональних даних
+                    </label>
+                  </div>
+                  <ErrorMessage
+                    name="consent"
+                    component="div"
+                    className={s.error}
+                  />
+                </div>
+                <div>
+                  <a
+                    href={policyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={s["consent-link"]}
+                  >
+                    Згода на обробку персональних даних
+                  </a>{" "}
+                </div>
               </div>
 
-              <button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? 'Відправка...' : 'Відправити заявку'}
+              <button type="submit" disabled={isSubmitting || !values.consent}>
+                {isSubmitting ? "Відправка..." : "Відправити заявку"}
               </button>
             </Form>
           )}
